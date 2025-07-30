@@ -2,7 +2,7 @@
 cask "sinkzone" do
   desc "A strict DNS filter to help you stay focused — or keep your kids safe"
   homepage "https://github.com/berbyte/sinkzone"
-  version "0.0.24"
+  version "0.0.36"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,23 @@ cask "sinkzone" do
 
   on_macos do
     on_intel do
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.24/sinkzone_Darwin_x86_64.tar.gz"
-      sha256 "8e25f86259633752aa4a6194d46c99da1186e36403293bb1bbef27f7ae53d700"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.36/sinkzone_Darwin_x86_64.tar.gz"
+      sha256 "dede643c4cb49e75f1dadfca44e371e9271e679eb17ce23cd17110c97208dbda"
     end
     on_arm do
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.24/sinkzone_Darwin_arm64.tar.gz"
-      sha256 "d45c2dabc52d79c7cd83b68be0015df003a32b703088aee278903ecbd8733840"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.36/sinkzone_Darwin_arm64.tar.gz"
+      sha256 "5720984c814309a168643c8fe54e8e15a10dadb0a6d8c7287abad4294a5c12e0"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.24/sinkzone_Linux_x86_64.tar.gz"
-      sha256 "ec84c76c446bc0c6bd11dfabc6ccc2d9e060dcaf94170bf3b75abdbad1ff8f33"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.36/sinkzone_Linux_x86_64.tar.gz"
+      sha256 "fe4d94126dba6dc24a346b2479d03143e2256af79359bb74d634ee1ff8cdd217"
     end
     on_arm do
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.24/sinkzone_Linux_arm64.tar.gz"
-      sha256 "7a5d6d3a70f0ad78e950dfa4902038ce13383bfe46ec67f7f9c13f0bce57ab97"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.36/sinkzone_Linux_arm64.tar.gz"
+      sha256 "b6026edf0470f393fa9e53f990f5619f599137177ce2e507b84659cb0ae205d4"
     end
   end
 
