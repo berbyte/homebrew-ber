@@ -2,33 +2,35 @@
 cask "sinkzone" do
   desc "A strict DNS filter to help you stay focused — or keep your kids safe"
   homepage "https://github.com/berbyte/sinkzone"
-  version "0.0.37"
+  version "0.0.39"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
-  binary "sinkzone"
-
   on_macos do
     on_intel do
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.37/sinkzone_Darwin_x86_64.tar.gz"
-      sha256 "f9ef87faa6916693da2ea860cc91996e0e9142b49df89bc7a58e1ce33f960f86"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.39/sinkzone-darwin-amd64"
+      sha256 "e76c5bbf70306015d558481570956797b392c0064ec94183091628612df17902"
+      binary "sinkzone-darwin-amd64", target: "sinkzone"
     end
     on_arm do
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.37/sinkzone_Darwin_arm64.tar.gz"
-      sha256 "8a9d3201502b38158b74a5798cc93eb740d47a09f18c21e3c2ad46b8b8924147"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.39/sinkzone-darwin-arm64"
+      sha256 "9869e3ddbcf846ed8f76bbef9fa67367c8be3091118184372aebe4c9110eb9b0"
+      binary "sinkzone-darwin-arm64", target: "sinkzone"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.37/sinkzone_Linux_x86_64.tar.gz"
-      sha256 "24ab109294343936ab36e8b88f8056d046064cd4386ecb2f150d8db6bb5f4e06"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.39/sinkzone-linux-amd64"
+      sha256 "e3761c51fe1696eda7160196db0368f99bec207d56ea239ccf8f9acbeffd1de4"
+      binary "sinkzone-linux-amd64", target: "sinkzone"
     end
     on_arm do
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.37/sinkzone_Linux_arm64.tar.gz"
-      sha256 "6d3c0613c671c6573e170755253f5baf92b6c5ae7520f083f16d8ca592677cd5"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.39/sinkzone-linux-arm64"
+      sha256 "12119650ba0107cfe1ea5fa83e047bf45c6195557c46fe5525c03f477cb0e813"
+      binary "sinkzone-linux-arm64", target: "sinkzone"
     end
   end
 
