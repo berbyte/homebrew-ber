@@ -5,21 +5,21 @@
 class Sinkzone < Formula
   desc "A strict DNS filter to help you stay focused — or keep your kids safe"
   homepage "https://github.com/berbyte/sinkzone"
-  version "0.0.45"
+  version "0.0.46"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.45/sinkzone-darwin-amd64"
-      sha256 "f715399a1194768baa2f2c7f1573534e3ffec5328b5d4dc85e5b520f940aec3e"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.46/sinkzone-darwin-amd64"
+      sha256 "ceca2032789ada1903b8c78a9ea9a29d652b13c236eee016f9f272ae6e9efe8d"
 
       def install
         bin.install "sinkzone-darwin-amd64" => "sinkzone"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.45/sinkzone-darwin-arm64"
-      sha256 "ef3e601738935bd30c9064fef68d9c991c34f2078d819034a8a5f368e2968f5f"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.46/sinkzone-darwin-arm64"
+      sha256 "055a1de115589e3211fc49e68fbce7b69d9c697058861a27f784b0586685ed5e"
 
       def install
         bin.install "sinkzone-darwin-arm64" => "sinkzone"
@@ -29,15 +29,15 @@ class Sinkzone < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.45/sinkzone-linux-amd64"
-      sha256 "7c535e63b297077d6cabc8939e0c875bb2983564fcd8beac1912aef1dabccef4"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.46/sinkzone-linux-amd64"
+      sha256 "e45ed38130934777f44e64d208d0bd210e2fa34f2b6f0e9b6773903a6cccff6b"
       def install
         bin.install "sinkzone-linux-amd64" => "sinkzone"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.45/sinkzone-linux-arm64"
-      sha256 "47d1a25cfabf6bd3ca35a84ab3f58f584d1687b9e44f86648b09984014f308ff"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.46/sinkzone-linux-arm64"
+      sha256 "9dacbdcdd8d505e5a84de3c507b99af82530497408402645f0149fd164054b7b"
       def install
         bin.install "sinkzone-linux-arm64" => "sinkzone"
       end
