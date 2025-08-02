@@ -5,20 +5,20 @@
 class Sinkzone < Formula
   desc "A strict DNS filter to help you stay focused — or keep your kids safe"
   homepage "https://github.com/berbyte/sinkzone"
-  version "0.0.52"
+  version "0.0.53"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.52/sinkzone-darwin-amd64"
-      sha256 "4287db1037d83eadb2f34bd0f92cfac0dd459fa047847d2199af4d9d71acdba5"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.53/sinkzone-darwin-amd64"
+      sha256 "aca884066166ea8948b96777775ebb57a792308cd5d934181173560885739e47"
 
       def install
         bin.install "sinkzone"
         man1.install "docs/sinkzone.1"
         rm Dir["#{bin}/{sinkzone-completion.bash,sinkzone-completion.zsh}"]
-        system bin/"sinkzone", "completion", "--shell", "bash"
-        system bin/"sinkzone", "completion", "--shell", "zsh"
+        system bin/"sinkzone", "completion", "bash"
+        system bin/"sinkzone", "completion", "zsh"
         bash_completion.install "sinkzone-completion.bash"
         zsh_completion.install "sinkzone-completion.zsh"
         (zsh_completion/"_sinkzone").write <<~EOS
@@ -32,15 +32,15 @@ class Sinkzone < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.52/sinkzone-darwin-arm64"
-      sha256 "77f872a9c06c815edf91e467eea13dd65e5f2c36e6349fb8c726939b3e3a3aea"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.53/sinkzone-darwin-arm64"
+      sha256 "e42423c01aeba29c416174d048a19fa4c3a2244a1e63768f26a149174cf673ef"
 
       def install
         bin.install "sinkzone"
         man1.install "docs/sinkzone.1"
         rm Dir["#{bin}/{sinkzone-completion.bash,sinkzone-completion.zsh}"]
-        system bin/"sinkzone", "completion", "--shell", "bash"
-        system bin/"sinkzone", "completion", "--shell", "zsh"
+        system bin/"sinkzone", "completion", "bash"
+        system bin/"sinkzone", "completion", "zsh"
         bash_completion.install "sinkzone-completion.bash"
         zsh_completion.install "sinkzone-completion.zsh"
         (zsh_completion/"_sinkzone").write <<~EOS
@@ -57,14 +57,14 @@ class Sinkzone < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.52/sinkzone-linux-amd64"
-      sha256 "96d8805e741e7c7ed3649b411dee3e5c91b1cd091e5c632542652c8a1140b195"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.53/sinkzone-linux-amd64"
+      sha256 "3ea8aebe3f92791274ef4aaa04486cab1d1f19ec5b56ce451516f92c973e7a05"
       def install
         bin.install "sinkzone"
         man1.install "docs/sinkzone.1"
         rm Dir["#{bin}/{sinkzone-completion.bash,sinkzone-completion.zsh}"]
-        system bin/"sinkzone", "completion", "--shell", "bash"
-        system bin/"sinkzone", "completion", "--shell", "zsh"
+        system bin/"sinkzone", "completion", "bash"
+        system bin/"sinkzone", "completion", "zsh"
         bash_completion.install "sinkzone-completion.bash"
         zsh_completion.install "sinkzone-completion.zsh"
         (zsh_completion/"_sinkzone").write <<~EOS
@@ -78,14 +78,14 @@ class Sinkzone < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.52/sinkzone-linux-arm64"
-      sha256 "6fb3517b0177436670c61601f88adefba127a60cf975937e3b97aeaf596fa78a"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.53/sinkzone-linux-arm64"
+      sha256 "80f4cd71674ad14e8b930dcc3cea12abd62a67354d77394599cb77b36ff4d294"
       def install
         bin.install "sinkzone"
         man1.install "docs/sinkzone.1"
         rm Dir["#{bin}/{sinkzone-completion.bash,sinkzone-completion.zsh}"]
-        system bin/"sinkzone", "completion", "--shell", "bash"
-        system bin/"sinkzone", "completion", "--shell", "zsh"
+        system bin/"sinkzone", "completion", "bash"
+        system bin/"sinkzone", "completion", "zsh"
         bash_completion.install "sinkzone-completion.bash"
         zsh_completion.install "sinkzone-completion.zsh"
         (zsh_completion/"_sinkzone").write <<~EOS
