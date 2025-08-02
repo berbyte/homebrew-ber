@@ -5,41 +5,97 @@
 class Sinkzone < Formula
   desc "A strict DNS filter to help you stay focused — or keep your kids safe"
   homepage "https://github.com/berbyte/sinkzone"
-  version "0.0.46"
+  version "0.0.50"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.46/sinkzone-darwin-amd64"
-      sha256 "ceca2032789ada1903b8c78a9ea9a29d652b13c236eee016f9f272ae6e9efe8d"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.50/sinkzone-darwin-amd64"
+      sha256 "b1bdf157db463accd64ec690a58fb4735500d462f91a4c66e607655eb2e9e99e"
 
       def install
-        bin.install "sinkzone-darwin-amd64" => "sinkzone"
+        bin.install "sinkzone"
+        man1.install "docs/sinkzone.1"
+        rm Dir["#{bin}/{sinkzone-completion.bash,sinkzone-completion.zsh}"]
+        system bin/"sinkzone", "completion", "--shell", "bash"
+        system bin/"sinkzone", "completion", "--shell", "zsh"
+        bash_completion.install "sinkzone-completion.bash"
+        zsh_completion.install "sinkzone-completion.zsh"
+        (zsh_completion/"_sinkzone").write <<~EOS
+          #compdef sinkzone
+          _sinkzone () {
+            local e
+            e=$(dirname ${funcsourcetrace[1]%:*})/sinkzone-completion.zsh
+            if [[ -f $e ]]; then source $e; fi
+          }
+        EOS
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.46/sinkzone-darwin-arm64"
-      sha256 "055a1de115589e3211fc49e68fbce7b69d9c697058861a27f784b0586685ed5e"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.50/sinkzone-darwin-arm64"
+      sha256 "1052b6f3769edf4750c2d25f6d8229bc78a4e814161dbbc04fcfa5b2faeccb74"
 
       def install
-        bin.install "sinkzone-darwin-arm64" => "sinkzone"
+        bin.install "sinkzone"
+        man1.install "docs/sinkzone.1"
+        rm Dir["#{bin}/{sinkzone-completion.bash,sinkzone-completion.zsh}"]
+        system bin/"sinkzone", "completion", "--shell", "bash"
+        system bin/"sinkzone", "completion", "--shell", "zsh"
+        bash_completion.install "sinkzone-completion.bash"
+        zsh_completion.install "sinkzone-completion.zsh"
+        (zsh_completion/"_sinkzone").write <<~EOS
+          #compdef sinkzone
+          _sinkzone () {
+            local e
+            e=$(dirname ${funcsourcetrace[1]%:*})/sinkzone-completion.zsh
+            if [[ -f $e ]]; then source $e; fi
+          }
+        EOS
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.46/sinkzone-linux-amd64"
-      sha256 "e45ed38130934777f44e64d208d0bd210e2fa34f2b6f0e9b6773903a6cccff6b"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.50/sinkzone-linux-amd64"
+      sha256 "9ba895aa281043fb17eec8f00d2105dd6022c335f52b841ee64c616fd89b7d11"
       def install
-        bin.install "sinkzone-linux-amd64" => "sinkzone"
+        bin.install "sinkzone"
+        man1.install "docs/sinkzone.1"
+        rm Dir["#{bin}/{sinkzone-completion.bash,sinkzone-completion.zsh}"]
+        system bin/"sinkzone", "completion", "--shell", "bash"
+        system bin/"sinkzone", "completion", "--shell", "zsh"
+        bash_completion.install "sinkzone-completion.bash"
+        zsh_completion.install "sinkzone-completion.zsh"
+        (zsh_completion/"_sinkzone").write <<~EOS
+          #compdef sinkzone
+          _sinkzone () {
+            local e
+            e=$(dirname ${funcsourcetrace[1]%:*})/sinkzone-completion.zsh
+            if [[ -f $e ]]; then source $e; fi
+          }
+        EOS
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.46/sinkzone-linux-arm64"
-      sha256 "9dacbdcdd8d505e5a84de3c507b99af82530497408402645f0149fd164054b7b"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.50/sinkzone-linux-arm64"
+      sha256 "d63b01d0bce60274cebbf1904b6f0bd7872f973cd1a49ec7c15ee32afeb3e3d0"
       def install
-        bin.install "sinkzone-linux-arm64" => "sinkzone"
+        bin.install "sinkzone"
+        man1.install "docs/sinkzone.1"
+        rm Dir["#{bin}/{sinkzone-completion.bash,sinkzone-completion.zsh}"]
+        system bin/"sinkzone", "completion", "--shell", "bash"
+        system bin/"sinkzone", "completion", "--shell", "zsh"
+        bash_completion.install "sinkzone-completion.bash"
+        zsh_completion.install "sinkzone-completion.zsh"
+        (zsh_completion/"_sinkzone").write <<~EOS
+          #compdef sinkzone
+          _sinkzone () {
+            local e
+            e=$(dirname ${funcsourcetrace[1]%:*})/sinkzone-completion.zsh
+            if [[ -f $e ]]; then source $e; fi
+          }
+        EOS
       end
     end
   end
