@@ -5,13 +5,13 @@
 class Sinkzone < Formula
   desc "A strict DNS filter to help you stay focused — or keep your kids safe"
   homepage "https://github.com/berbyte/sinkzone"
-  version "0.0.51"
+  version "0.0.52"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.51/sinkzone-darwin-amd64"
-      sha256 "e2e0e6a4f8183a8620eaaa5058ccb19ece93e147b249b614ac897af4b8a48b71"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.52/sinkzone-darwin-amd64"
+      sha256 "4287db1037d83eadb2f34bd0f92cfac0dd459fa047847d2199af4d9d71acdba5"
 
       def install
         bin.install "sinkzone"
@@ -32,8 +32,8 @@ class Sinkzone < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.51/sinkzone-darwin-arm64"
-      sha256 "fc39e3eb2b9abd0d81a8c120955719e5ccd6d9b2f7c73e1d1dde022b60df9cb2"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.52/sinkzone-darwin-arm64"
+      sha256 "77f872a9c06c815edf91e467eea13dd65e5f2c36e6349fb8c726939b3e3a3aea"
 
       def install
         bin.install "sinkzone"
@@ -57,8 +57,8 @@ class Sinkzone < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.51/sinkzone-linux-amd64"
-      sha256 "d6d939cdfa4bc9ed643ae3be2a2dfd5c27625f45ced7f0251268117e51f1a7a7"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.52/sinkzone-linux-amd64"
+      sha256 "96d8805e741e7c7ed3649b411dee3e5c91b1cd091e5c632542652c8a1140b195"
       def install
         bin.install "sinkzone"
         man1.install "docs/sinkzone.1"
@@ -78,8 +78,8 @@ class Sinkzone < Formula
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.51/sinkzone-linux-arm64"
-      sha256 "fffadb2f17a8153f42e55daca4cb56c453be304af430a608b8a3583661dff72f"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.52/sinkzone-linux-arm64"
+      sha256 "6fb3517b0177436670c61601f88adefba127a60cf975937e3b97aeaf596fa78a"
       def install
         bin.install "sinkzone"
         man1.install "docs/sinkzone.1"
