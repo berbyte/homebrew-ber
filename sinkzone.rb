@@ -5,46 +5,55 @@
 class Sinkzone < Formula
   desc "A strict DNS filter to help you stay focused — or keep your kids safe"
   homepage "https://github.com/berbyte/sinkzone"
-  version "0.0.54"
+  version "0.0.55"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.54/sinkzone-darwin-amd64"
-      sha256 "96f1c1be2b1cf1ac61c69f2d4c446ef3b7ce18806571d0c0847e6046a3360a5e"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.55/sinkzone-darwin-amd64"
+      sha256 "60a7d8fcee2031316952c91c28abc423b7c37c38501ef5c6d44b1dbabe8bb888"
 
       def install
         bin.install "sinkzone"
-        man1.install "docs/sinkzone.1"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.54/sinkzone-darwin-arm64"
-      sha256 "f50a21f6543c1cb922701b89fe1f55b1d74b28767a370c0470cc2001ad7225a7"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.55/sinkzone-darwin-arm64"
+      sha256 "35d0202659c1cb270a568f8aec3a1cdd7547ddb8e4d08f4279443a9084985ba2"
 
       def install
         bin.install "sinkzone"
-        man1.install "docs/sinkzone.1"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.54/sinkzone-linux-amd64"
-      sha256 "abee1ad865a8047a10c06e8f0369ad8dbb035ca73e2eeec0120d3e4cead7403e"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.55/sinkzone-linux-amd64"
+      sha256 "0e92eae3bc632700d3b2505b43053970379281a715762de0873e044d1c3b0ffd"
       def install
         bin.install "sinkzone"
-        man1.install "docs/sinkzone.1"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.54/sinkzone-linux-arm64"
-      sha256 "f11cdb6f4f2ab0a2160039e7294b58d49cbe51f21016de775e6837bb84455f0d"
+      url "https://github.com/berbyte/sinkzone/releases/download/v0.0.55/sinkzone-linux-arm64"
+      sha256 "7477d608c2628b9ed7e40b16c1e8176257a4a95135957c8ef52317297b9de360"
       def install
         bin.install "sinkzone"
-        man1.install "docs/sinkzone.1"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      Sinkzone is a DNS-based productivity tool designed to reduce distractions and help you focus.
+      It works by running a local DNS resolver that intercepts domain name queries. During focus
+      sessions, only domains explicitly allowed via the allowlist will resolve — everything else
+      is silently blocked.
+
+      Features:
+      - Local DNS resolver for network-level blocking
+      - Focus mode with configurable duration
+    EOS
   end
 end
